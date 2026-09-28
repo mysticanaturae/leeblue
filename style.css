@@ -1,0 +1,394 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+
+:root {
+    --blue: #155c78;
+    --deep-blue: #0b3446;
+    --sky: #dceff2;
+    --green: #526b4d;
+    --sand: #f4efe5;
+    --cream: #fbf8f1;
+    --ink: #18343c;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "DM Sans", sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.site-header {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 26px 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: .18em;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: .06em;
+}
+
+.hero {
+    height: 92vh;
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero > img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(7,35,45,.7),
+        rgba(7,35,45,.2),
+        rgba(7,35,45,.05)
+    );
+}
+
+.hero-overlay {
+    position: absolute;
+    z-index: 2;
+    left: 9vw;
+    bottom: 13vh;
+    color: white;
+    max-width: 700px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(70px, 12vw, 170px);
+    line-height: .85;
+    font-weight: 400;
+    margin: 0 0 25px;
+}
+
+.hero-line {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(24px, 3vw, 42px);
+    margin: 0 0 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    background: white;
+    color: var(--deep-blue);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: .15em;
+    font-weight: 600;
+}
+
+.button.dark {
+    background: var(--deep-blue);
+    color: white;
+}
+
+.intro {
+    max-width: 900px;
+    margin: auto;
+    padding: 150px 30px;
+    text-align: center;
+}
+
+.intro h2,
+.section-heading h2,
+.bonus h2,
+.stay h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(45px, 6vw, 78px);
+    line-height: 1.05;
+    font-weight: 400;
+    margin: 0 0 35px;
+}
+
+.lead {
+    font-size: 22px;
+}
+
+.intro p:not(.eyebrow) {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 700px;
+}
+
+.split-section .image {
+    min-height: 600px;
+}
+
+.split-section img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10vw;
+    background: var(--sky);
+}
+
+.content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1.05;
+    font-weight: 400;
+}
+
+.garden {
+    position: relative;
+    min-height: 750px;
+}
+
+.garden img {
+    height: 750px;
+    object-fit: cover;
+}
+
+.garden-text {
+    position: absolute;
+    left: 8vw;
+    bottom: 8vw;
+    max-width: 500px;
+    background: rgba(251,248,241,.94);
+    padding: 50px;
+}
+
+.garden-text h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 52px;
+    line-height: 1.05;
+    font-weight: 400;
+}
+
+.explore {
+    padding: 150px 7vw;
+}
+
+.section-heading {
+    max-width: 750px;
+    margin-bottom: 90px;
+}
+
+.section-heading > p:last-child {
+    font-size: 20px;
+    max-width: 650px;
+}
+
+.places {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px 50px;
+}
+
+.places article span {
+    font-size: 11px;
+    letter-spacing: .2em;
+    opacity: .5;
+}
+
+.places h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.bonus {
+    background: var(--green);
+    color: white;
+    padding: 150px 7vw;
+}
+
+.bonus-inner {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.bonus h2 {
+    color: white;
+}
+
+.bonus-intro {
+    font-size: 22px;
+    max-width: 750px;
+    margin-bottom: 80px;
+}
+
+.experiences {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+.experiences h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.gallery {
+    padding: 150px 5vw;
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.gallery-grid img {
+    aspect-ratio: 1.25;
+    object-fit: cover;
+}
+
+.gallery-grid img:last-child {
+    grid-column: span 2;
+}
+
+.stay {
+    padding: 170px 30px;
+    text-align: center;
+    background: var(--sand);
+}
+
+.stay p:not(.eyebrow) {
+    margin-bottom: 35px;
+}
+
+footer {
+    background: var(--deep-blue);
+    color: white;
+    padding: 35px 5vw;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    font-size: 12px;
+}
+
+footer div {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 800px) {
+
+    .site-header {
+        padding: 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-overlay {
+        left: 25px;
+        right: 25px;
+    }
+
+    .intro,
+    .explore,
+    .gallery {
+        padding: 90px 25px;
+    }
+
+    .split-section {
+        grid-template-columns: 1fr;
+    }
+
+    .split-section .image {
+        min-height: 450px;
+    }
+
+    .garden-text {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        padding: 30px;
+    }
+
+    .places,
+    .experiences {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img:last-child {
+        grid-column: auto;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
