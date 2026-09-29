@@ -1,5 +1,16 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
 
+
+/* ============================================================
+   LEE BLUE · POMONA
+   CLEAN MASTER CSS
+   ============================================================ */
+
+
+/* ============================================================
+   01 · VARIABLES
+   ============================================================ */
+
 :root {
     --blue: #155c78;
     --deep-blue: #0b3446;
@@ -9,9 +20,26 @@
     --cream: #fbf8f1;
     --ink: #18343c;
     --white: #ffffff;
+
+    --content: 1280px;
+    --page-padding: clamp(24px, 6vw, 90px);
+
+    --shadow-soft:
+        0 14px 40px rgba(24,52,60,.055),
+        0 2px 6px rgba(24,52,60,.025);
+
+    --shadow-hover:
+        0 24px 60px rgba(24,52,60,.11);
 }
 
-* {
+
+/* ============================================================
+   02 · RESET
+   ============================================================ */
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -21,113 +49,215 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
+
     font-family: "DM Sans", sans-serif;
     color: var(--ink);
     background: var(--cream);
+
     line-height: 1.7;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 img {
     display: block;
     width: 100%;
+    max-width: 100%;
 }
+
+a {
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    letter-spacing: -.025em;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ============================================================
+   03 · HEADER
+   ============================================================ */
 
 .site-header {
     position: absolute;
-    z-index: 10;
+    z-index: 20;
+
     top: 0;
     left: 0;
+
     width: 100%;
-    padding: 26px 5vw;
+
+    padding:
+        26px
+        clamp(24px, 5vw, 80px);
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
     color: white;
 }
 
 .logo {
     color: white;
     text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
     font-weight: 600;
+
     letter-spacing: .18em;
 }
 
 nav {
     display: flex;
+    align-items: center;
     gap: 30px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+
     font-size: 13px;
     letter-spacing: .06em;
+
+    transition: opacity .25s ease;
 }
 
+nav a:hover {
+    opacity: .7;
+}
+
+
+/* ============================================================
+   04 · HERO
+   ============================================================ */
+
 .hero {
+    position: relative;
+
+    width: 100%;
     height: 92vh;
     min-height: 650px;
-    position: relative;
+
     overflow: hidden;
 }
 
 .hero > img {
+    width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
 .hero::after {
     content: "";
+
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(7,35,45,.7),
-        rgba(7,35,45,.2),
-        rgba(7,35,45,.05)
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7,35,45,.72) 0%,
+            rgba(7,35,45,.30) 48%,
+            rgba(7,35,45,.05) 100%
+        );
 }
 
 .hero-overlay {
     position: absolute;
     z-index: 2;
-    left: 9vw;
-    bottom: 13vh;
+
+    left: clamp(24px, 9vw, 145px);
+    bottom: clamp(70px, 13vh, 150px);
+
+    width: min(700px, calc(100% - 48px));
+
     color: white;
-    max-width: 700px;
 }
 
 .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: .22em;
+    margin: 0 0 20px;
+
+    font-family: "DM Sans", sans-serif;
     font-size: 11px;
     font-weight: 600;
-    margin-bottom: 20px;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+    letter-spacing: .22em;
 }
 
 .hero h1 {
+    margin: 0 0 25px;
+
     font-family: "Playfair Display", serif;
     font-size: clamp(70px, 12vw, 170px);
     line-height: .85;
     font-weight: 400;
-    margin: 0 0 25px;
+    letter-spacing: -.045em;
 }
 
 .hero-line {
+    margin: 0 0 35px;
+
     font-family: "Playfair Display", serif;
     font-size: clamp(24px, 3vw, 42px);
-    margin: 0 0 35px;
+    line-height: 1.15;
 }
 
 .button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
     padding: 15px 25px;
+
     background: white;
     color: var(--deep-blue);
+
     text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
     font-size: 11px;
-    letter-spacing: .15em;
     font-weight: 600;
+
+    letter-spacing: .15em;
+    text-transform: uppercase;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
 }
 
 .button.dark {
@@ -135,10 +265,20 @@ nav a {
     color: white;
 }
 
+
+/* ============================================================
+   05 · INTRO
+   ============================================================ */
+
 .intro {
-    max-width: 900px;
-    margin: auto;
-    padding: 150px 30px;
+    width: min(900px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding:
+        clamp(100px, 11vw, 160px)
+        0;
+
     text-align: center;
 }
 
@@ -146,15 +286,21 @@ nav a {
 .section-heading h2,
 .bonus h2,
 .stay h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(45px, 6vw, 78px);
-    line-height: 1.05;
-    font-weight: 400;
     margin: 0 0 35px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 1.02;
+    font-weight: 400;
+    letter-spacing: -.035em;
 }
 
-.lead {
+.intro .lead {
+    margin-bottom: 28px;
+
+    font-family: "Playfair Display", serif;
     font-size: 22px;
+    line-height: 1.45;
 }
 
 .intro p:not(.eyebrow) {
@@ -163,17 +309,26 @@ nav a {
     margin-right: auto;
 }
 
+
+/* ============================================================
+   06 · GENERIC SPLIT SECTION
+   ============================================================ */
+
 .split-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    width: 100%;
     min-height: 700px;
 }
 
 .split-section .image {
-    min-height: 600px;
+    min-height: 650px;
+    overflow: hidden;
 }
 
-.split-section img {
+.split-section .image img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -182,85 +337,182 @@ nav a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10vw;
+
+    padding:
+        clamp(60px, 9vw, 135px);
+
     background: var(--sky);
 }
 
 .content h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(42px, 5vw, 70px);
-    line-height: 1.05;
-    font-weight: 400;
+    margin-bottom: 30px;
+
+    font-size: clamp(44px, 5vw, 72px);
+    line-height: 1.03;
 }
+
+
+/* ============================================================
+   07 · GARDEN
+   ============================================================ */
 
 .garden {
     position: relative;
+
     min-height: 750px;
+    overflow: hidden;
 }
 
 .garden img {
+    width: 100%;
     height: 750px;
+
     object-fit: cover;
 }
 
 .garden-text {
     position: absolute;
-    left: 8vw;
-    bottom: 8vw;
-    max-width: 500px;
-    background: rgba(251,248,241,.94);
-    padding: 50px;
+
+    left: clamp(20px, 8vw, 120px);
+    bottom: clamp(20px, 8vw, 120px);
+
+    width: min(500px, calc(100% - 40px));
+
+    padding: clamp(30px, 4vw, 50px);
+
+    background: rgba(251,248,241,.95);
+
+    box-shadow: var(--shadow-soft);
 }
 
 .garden-text h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 52px;
-    line-height: 1.05;
-    font-weight: 400;
+    margin-bottom: 20px;
+
+    font-size: clamp(42px, 5vw, 58px);
+    line-height: 1.03;
 }
 
+
+/* ============================================================
+   08 · GENERIC EXPLORE
+   ============================================================ */
+
 .explore {
-    padding: 150px 7vw;
+    padding:
+        clamp(100px, 11vw, 160px)
+        var(--page-padding);
+
+    background: var(--cream);
 }
 
 .section-heading {
-    max-width: 750px;
-    margin-bottom: 90px;
+    width: 100%;
+    max-width: 780px;
+
+    margin: 0 0 75px;
 }
 
 .section-heading > p:last-child {
-    font-size: 20px;
-    max-width: 650px;
+    max-width: 700px;
+
+    font-size: 19px;
+    line-height: 1.75;
 }
 
 .places {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 70px 50px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    width: 100%;
+    max-width: var(--content);
+
+    margin: 0 auto;
+
+    gap: 20px;
+}
+
+.places article {
+    position: relative;
+
+    min-height: 300px;
+
+    padding: 32px;
+
+    background: white;
+
+    border: 1px solid rgba(24,52,60,.10);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.places article:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
 }
 
 .places article span {
-    font-size: 11px;
+    display: block;
+
+    margin-bottom: 28px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
     letter-spacing: .2em;
-    opacity: .5;
+
+    opacity: .55;
 }
 
 .places h3 {
-    font-family: "Playfair Display", serif;
+    margin-bottom: 15px;
+
     font-size: 34px;
-    font-weight: 400;
-    margin: 15px 0;
+    line-height: 1.1;
 }
 
+
+/* ============================================================
+   09 · BONUS
+   ============================================================ */
+
 .bonus {
+    position: relative;
+    overflow: hidden;
+
+    padding:
+        clamp(100px, 11vw, 160px)
+        var(--page-padding);
+
     background: var(--green);
     color: white;
-    padding: 150px 7vw;
+}
+
+.bonus::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -230px;
+    top: -230px;
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
 }
 
 .bonus-inner {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
     max-width: 1100px;
-    margin: auto;
+
+    margin: 0 auto;
 }
 
 .bonus h2 {
@@ -268,95 +520,581 @@ nav a {
 }
 
 .bonus-intro {
-    font-size: 22px;
     max-width: 750px;
-    margin-bottom: 80px;
+
+    margin-bottom: 75px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    line-height: 1.5;
 }
 
 .experiences {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 60px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.experiences > div {
+    padding: 34px;
+
+    border: 1px solid rgba(255,255,255,.16);
+
+    background: rgba(255,255,255,.055);
+
+    backdrop-filter: blur(5px);
 }
 
 .experiences h3 {
-    font-family: "Playfair Display", serif;
+    margin-bottom: 12px;
+
+    color: white;
+
     font-size: 32px;
-    font-weight: 400;
+    line-height: 1.1;
 }
 
+
+/* ============================================================
+   10 · GALLERY
+   ============================================================ */
+
 .gallery {
-    padding: 150px 5vw;
+    padding:
+        clamp(100px, 11vw, 160px)
+        5vw;
+
+    background: white;
 }
 
 .gallery-title {
+    max-width: 800px;
+
+    margin: 0 auto 70px;
+
     text-align: center;
-    margin-bottom: 70px;
+}
+
+.gallery-title h2 {
+    margin-bottom: 20px;
+
+    font-size: clamp(48px, 6vw, 80px);
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    max-width: 1400px;
+    margin: 0 auto;
+
     gap: 18px;
 }
 
 .gallery-grid img {
+    width: 100%;
     aspect-ratio: 1.25;
+
     object-fit: cover;
+
+    transition: transform .5s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.01);
 }
 
 .gallery-grid img:last-child {
     grid-column: span 2;
+    aspect-ratio: 2 / 1;
 }
 
+
+/* ============================================================
+   11 · STAY
+   ============================================================ */
+
 .stay {
-    padding: 170px 30px;
+    padding:
+        clamp(110px, 13vw, 180px)
+        30px;
+
     text-align: center;
+
     background: var(--sand);
 }
 
 .stay p:not(.eyebrow) {
+    max-width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 35px;
 }
 
+
+/* ============================================================
+   12 · FOOTER
+   ============================================================ */
+
 footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 35px 5vw;
+
     background: var(--deep-blue);
     color: white;
-    padding: 35px 5vw;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
+
     font-size: 12px;
 }
 
 footer div {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
-@media (max-width: 800px) {
+
+/* ============================================================
+   13 · POMONA STORY
+   ============================================================ */
+
+.pomona-story {
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+
+    width: 100%;
+    min-height: 780px;
+
+    background: var(--sand);
+}
+
+.pomona-image {
+    position: relative;
+
+    min-height: 780px;
+
+    overflow: hidden;
+}
+
+.pomona-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(11,52,70,.02),
+            rgba(11,52,70,.12)
+        );
+
+    pointer-events: none;
+}
+
+.pomona-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 780px;
+
+    object-fit: cover;
+
+    transition: transform 1s cubic-bezier(.2,.65,.2,1);
+}
+
+.pomona-story:hover .pomona-image img {
+    transform: scale(1.025);
+}
+
+.pomona-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding:
+        clamp(70px, 8vw, 125px)
+        clamp(50px, 7vw, 115px);
+}
+
+.pomona-content > * {
+    width: 100%;
+    max-width: 680px;
+}
+
+.pomona-content .eyebrow {
+    margin-bottom: 24px;
+}
+
+.pomona-content h2 {
+    margin: 0 0 35px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(58px, 6vw, 92px);
+    line-height: .94;
+    font-weight: 400;
+    letter-spacing: -.045em;
+}
+
+.pomona-lead {
+    margin: 0 0 30px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(23px, 2.1vw, 30px);
+    line-height: 1.32;
+}
+
+.pomona-content p:not(.eyebrow) {
+    margin-bottom: 19px;
+
+    font-size: 16px;
+    line-height: 1.82;
+}
+
+.pomona-highlight {
+    margin-top: 20px !important;
+    padding: 26px 30px;
+
+    background: rgba(255,255,255,.62);
+
+    border-left: 3px solid var(--blue);
+
+    box-shadow:
+        0 18px 50px rgba(24,52,60,.06);
+}
+
+
+/* ============================================================
+   14 · POMONA TODAY
+   ============================================================ */
+
+.pomona-now {
+    width: 100%;
+
+    padding:
+        clamp(100px, 11vw, 165px)
+        var(--page-padding);
+
+    background: var(--cream);
+}
+
+.pomona-now-inner {
+    width: 100%;
+    max-width: var(--content);
+
+    margin: 0 auto;
+}
+
+.pomona-now .section-heading {
+    max-width: 800px;
+
+    margin-bottom: 75px;
+}
+
+.pomona-now .section-heading h2 {
+    margin-bottom: 30px;
+
+    font-size: clamp(56px, 6vw, 84px);
+    line-height: .98;
+}
+
+.pomona-now .section-heading > p:last-child {
+    max-width: 720px;
+
+    font-size: 19px;
+    line-height: 1.75;
+}
+
+.pomona-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    width: 100%;
+
+    gap: 18px;
+}
+
+.pomona-cards article {
+    position: relative;
+
+    min-height: 285px;
+
+    padding: 32px 28px;
+
+    background: white;
+
+    border: 1px solid rgba(24,52,60,.10);
+    border-radius: 6px;
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.pomona-cards article::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 28px;
+    right: 28px;
+
+    height: 2px;
+
+    background: var(--blue);
+    opacity: .35;
+}
+
+.pomona-cards article:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.pomona-cards span {
+    display: block;
+
+    font-size: 10px;
+    letter-spacing: .22em;
+
+    opacity: .55;
+}
+
+.pomona-cards h3 {
+    margin: 31px 0 14px;
+
+    font-size: 31px;
+    line-height: 1.08;
+}
+
+.pomona-cards p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ============================================================
+   15 · POMONA QUOTE
+   ============================================================ */
+
+.pomona-quote {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 520px;
+
+    padding: 90px 25px;
+
+    background:
+        linear-gradient(
+            rgba(11,52,70,.64),
+            rgba(11,52,70,.64)
+        ),
+        url("images/pomona5.png") center / cover no-repeat;
+
+    color: white;
+
+    text-align: center;
+}
+
+.pomona-quote div {
+    width: 100%;
+    max-width: 900px;
+}
+
+.pomona-quote p {
+    margin: 0 0 30px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5.5vw, 72px);
+    line-height: 1.06;
+    letter-spacing: -.035em;
+}
+
+.pomona-quote span {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10px;
+    letter-spacing: .22em;
+}
+
+
+/* ============================================================
+   16 · LIFE IN POMONA
+   ============================================================ */
+
+.pomona-life {
+    width: 100%;
+
+    padding:
+        clamp(100px, 11vw, 165px)
+        var(--page-padding);
+
+    background:
+        linear-gradient(
+            180deg,
+            #dceff2 0%,
+            #edf5f3 100%
+        );
+}
+
+.pomona-life-inner {
+    width: 100%;
+    max-width: var(--content);
+
+    margin: 0 auto;
+}
+
+.pomona-life .section-heading {
+    max-width: 820px;
+
+    margin-bottom: 75px;
+}
+
+.pomona-life .section-heading h2 {
+    margin-bottom: 30px;
+
+    font-size: clamp(56px, 6vw, 84px);
+    line-height: .98;
+}
+
+.pomona-life .section-heading > p:last-child {
+    max-width: 720px;
+
+    font-size: 19px;
+    line-height: 1.75;
+}
+
+.pomona-life-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.life-card {
+    position: relative;
+
+    min-height: 285px;
+
+    padding: 32px 28px;
+
+    background: rgba(255,255,255,.88);
+
+    border: 1px solid rgba(24,52,60,.10);
+    border-radius: 6px;
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.life-card:hover {
+    transform: translateY(-6px);
+
+    background: white;
+
+    box-shadow: var(--shadow-hover);
+}
+
+.life-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 27px;
+    right: 25px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+    opacity: .45;
+}
+
+.life-card span {
+    display: inline-block;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid rgba(24,52,60,.12);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: .2em;
+
+    opacity: .55;
+}
+
+.life-card h3 {
+    margin: 28px 0 14px;
+
+    font-size: 31px;
+    line-height: 1.08;
+}
+
+.life-card p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.72;
+}
+
+.pomona-life-footer {
+    width: 100%;
+    max-width: 900px;
+
+    margin-top: 90px;
+    padding-top: 55px;
+
+    border-top: 1px solid rgba(24,52,60,.14);
+}
+
+.pomona-life-footer p {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 5vw, 66px);
+    line-height: 1.05;
+    letter-spacing: -.035em;
+}
+
+
+/* ============================================================
+   17 · TABLET
+   ============================================================ */
+
+@media (max-width: 1000px) {
 
     .site-header {
-        padding: 20px;
+        padding: 22px 30px;
     }
 
     nav {
-        display: none;
-    }
-
-    .hero {
-        min-height: 600px;
+        gap: 20px;
     }
 
     .hero-overlay {
-        left: 25px;
-        right: 25px;
-    }
-
-    .intro,
-    .explore,
-    .gallery {
-        padding: 90px 25px;
+        left: 30px;
     }
 
     .split-section {
@@ -364,31 +1102,369 @@ footer div {
     }
 
     .split-section .image {
-        min-height: 450px;
+        min-height: 520px;
+    }
+
+    .content {
+        padding: 80px 40px;
+    }
+
+    .places {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pomona-story {
+        grid-template-columns: 1fr;
+    }
+
+    /*
+       IMPORTANT:
+       On tablet/mobile the Pomona TEXT comes first.
+       The image comes immediately after it.
+    */
+
+    .pomona-content {
+        order: 1;
+        padding: 85px 40px 80px;
+    }
+
+    .pomona-image {
+        order: 2;
+
+        min-height: 560px;
+    }
+
+    .pomona-image img {
+        min-height: 560px;
+    }
+
+    .pomona-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pomona-life-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .experiences {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-grid {
+        gap: 14px;
+    }
+}
+
+
+/* ============================================================
+   18 · MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 20px 22px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        height: 82vh;
+        min-height: 580px;
+    }
+
+    .hero-overlay {
+        left: 22px;
+        right: 22px;
+        bottom: 70px;
+
+        width: auto;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 19vw, 105px);
+    }
+
+    .hero-line {
+        font-size: 25px;
+    }
+
+
+    .intro,
+    .explore,
+    .gallery {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .intro {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .intro h2,
+    .section-heading h2,
+    .bonus h2,
+    .stay h2 {
+        font-size: 50px;
+    }
+
+
+    .split-section .image {
+        min-height: 420px;
+    }
+
+    .content {
+        padding: 75px 25px;
+    }
+
+
+    .garden {
+        min-height: 600px;
+    }
+
+    .garden img {
+        height: 600px;
     }
 
     .garden-text {
         left: 20px;
         right: 20px;
         bottom: 20px;
-        padding: 30px;
+
+        width: auto;
+
+        padding: 28px;
     }
 
-    .places,
+    .garden-text h2 {
+        font-size: 44px;
+    }
+
+
+    .places {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .places article {
+        min-height: auto;
+        padding: 28px 25px;
+    }
+
+
+    .bonus {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
     .experiences {
         grid-template-columns: 1fr;
-        gap: 45px;
     }
+
 
     .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .gallery-grid img:last-child {
         grid-column: auto;
+        aspect-ratio: 1.25;
     }
+
 
     footer {
         flex-direction: column;
+        align-items: flex-start;
+
+        padding: 30px 22px;
+    }
+
+
+    /* --------------------------------------------------------
+       POMONA STORY · MOBILE
+       -------------------------------------------------------- */
+
+    .pomona-content {
+        order: 1;
+
+        padding:
+            75px
+            22px
+            70px;
+    }
+
+    .pomona-content .eyebrow {
+        margin-bottom: 20px;
+    }
+
+    .pomona-content h2 {
+        margin-bottom: 30px;
+
+        font-size: 53px;
+        line-height: .96;
+    }
+
+    .pomona-lead {
+        font-size: 23px;
+        line-height: 1.34;
+    }
+
+    .pomona-content p:not(.eyebrow) {
+        font-size: 15px;
+        line-height: 1.76;
+    }
+
+    .pomona-highlight {
+        padding: 23px;
+    }
+
+    .pomona-image {
+        order: 2;
+
+        min-height: 390px;
+    }
+
+    .pomona-image img {
+        min-height: 390px;
+    }
+
+
+    /* --------------------------------------------------------
+       POMONA TODAY · MOBILE
+       -------------------------------------------------------- */
+
+    .pomona-now {
+        padding:
+            90px
+            20px;
+    }
+
+    .pomona-now .section-heading {
+        margin-bottom: 55px;
+    }
+
+    .pomona-now .section-heading h2 {
+        font-size: 52px;
+    }
+
+    .pomona-now .section-heading > p:last-child {
+        font-size: 16px;
+    }
+
+    .pomona-cards {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .pomona-cards article {
+        min-height: 0;
+
+        padding: 28px 24px;
+    }
+
+    .pomona-cards h3 {
+        font-size: 29px;
+    }
+
+
+    /* --------------------------------------------------------
+       POMONA QUOTE · MOBILE
+       -------------------------------------------------------- */
+
+    .pomona-quote {
+        min-height: 440px;
+
+        padding:
+            75px
+            22px;
+    }
+
+    .pomona-quote p {
+        font-size: 42px;
+    }
+
+
+    /* --------------------------------------------------------
+       LIFE IN POMONA · MOBILE
+       -------------------------------------------------------- */
+
+    .pomona-life {
+        padding:
+            90px
+            20px;
+    }
+
+    .pomona-life .section-heading {
+        margin-bottom: 55px;
+    }
+
+    .pomona-life .section-heading h2 {
+        font-size: 52px;
+    }
+
+    .pomona-life .section-heading > p:last-child {
+        font-size: 16px;
+    }
+
+    .pomona-life-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .life-card {
+        min-height: 0;
+
+        padding: 28px 24px;
+    }
+
+    .life-card h3 {
+        font-size: 29px;
+    }
+
+    .life-card p {
+        font-size: 15px;
+        line-height: 1.72;
+    }
+
+    .pomona-life-footer {
+        margin-top: 70px;
+        padding-top: 45px;
+    }
+
+    .pomona-life-footer p {
+        font-size: 42px;
+    }
+}
+
+
+/* ============================================================
+   19 · VERY SMALL PHONES
+   ============================================================ */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .intro h2,
+    .section-heading h2,
+    .bonus h2,
+    .stay h2 {
+        font-size: 44px;
+    }
+
+    .pomona-content h2,
+    .pomona-now .section-heading h2,
+    .pomona-life .section-heading h2 {
+        font-size: 46px;
+    }
+
+    .pomona-quote p {
+        font-size: 37px;
     }
 }
