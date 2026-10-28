@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
 
 
 /* ============================================================
@@ -2602,3 +2602,19 @@ figure.lee-pomona-sign-banner > img {
     }
 }
 /* END FINAL POMONA SIGN NATURAL IMAGE RATIO */
+
+/* LEE BLUE — AUTO-ADDED CARD PHOTOS */
+.pomona-cards article > img,
+.pomona-life-grid .life-card > img,
+.places > article > img,
+.experiences > div > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 0 1rem;
+    border-radius: 5px;
+}
+/* END LEE BLUE — AUTO-ADDED CARD PHOTOS */
