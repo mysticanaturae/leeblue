@@ -1891,9 +1891,10 @@ a.lee-guide-card:hover .lee-guide-image img {
 .lee-pomona-sign-banner img {
     display: block;
     width: 100%;
-    height: clamp(230px, 34vw, 430px);
-    object-fit: cover;
-    object-position: center 55%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
 }
 
 .lee-pomona-sign-banner figcaption {
@@ -1919,12 +1920,19 @@ a.lee-guide-card:hover .lee-guide-image img {
 
 @media (max-width: 600px) {
     .lee-pomona-sign-banner {
+        width: 100%;
+        height: auto;
         margin: 24px 0 30px;
+        overflow: visible;
         border-radius: 12px;
     }
 
     .lee-pomona-sign-banner img {
-        height: 245px;
+        width: 100%;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        object-position: center !important;
     }
 
     .lee-pomona-sign-banner figcaption {
@@ -2558,5 +2566,6 @@ LEE BLUE POMONA â€” PREMIUM BOUTIQUE BOOKING
     }
 }
 /* END LEE BLUE â€” INNER TEXT SPACING V3 */
+
 
 
