@@ -2569,3 +2569,36 @@ LEE BLUE POMONA â€” PREMIUM BOUTIQUE BOOKING
 
 
 
+
+/* LEE BLUE — FINAL POMONA SIGN NATURAL IMAGE RATIO */
+figure.lee-pomona-sign-banner {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    overflow: visible !important;
+}
+
+figure.lee-pomona-sign-banner > img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 2048 / 1008 !important;
+    object-fit: fill !important;
+    object-position: center !important;
+    transform: none !important;
+}
+
+@media (max-width: 600px) {
+    figure.lee-pomona-sign-banner,
+    figure.lee-pomona-sign-banner > img {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+}
+/* END FINAL POMONA SIGN NATURAL IMAGE RATIO */
