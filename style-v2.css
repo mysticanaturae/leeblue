@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
 
 
 /* ============================================================
-   LEE BLUE · POMONA
+   LEE BLUE Â· POMONA
    CLEAN MASTER CSS
    ============================================================ */
 
 
 /* ============================================================
-   01 · VARIABLES
+   01 Â· VARIABLES
    ============================================================ */
 
 :root {
@@ -34,7 +34,7 @@
 
 
 /* ============================================================
-   02 · RESET
+   02 Â· RESET
    ============================================================ */
 
 *,
@@ -95,7 +95,7 @@ a {
 
 
 /* ============================================================
-   03 · HEADER
+   03 Â· HEADER
    ============================================================ */
 
 .site-header {
@@ -151,7 +151,7 @@ nav a:hover {
 
 
 /* ============================================================
-   04 · HERO
+   04 Â· HERO
    ============================================================ */
 
 .hero {
@@ -267,7 +267,7 @@ nav a:hover {
 
 
 /* ============================================================
-   05 · INTRO
+   05 Â· INTRO
    ============================================================ */
 
 .intro {
@@ -311,7 +311,7 @@ nav a:hover {
 
 
 /* ============================================================
-   06 · GENERIC SPLIT SECTION
+   06 Â· GENERIC SPLIT SECTION
    ============================================================ */
 
 .split-section {
@@ -353,7 +353,7 @@ nav a:hover {
 
 
 /* ============================================================
-   07 · GARDEN
+   07 Â· GARDEN
    ============================================================ */
 
 .garden {
@@ -394,7 +394,7 @@ nav a:hover {
 
 
 /* ============================================================
-   08 · GENERIC EXPLORE
+   08 Â· GENERIC EXPLORE
    ============================================================ */
 
 .explore {
@@ -475,7 +475,7 @@ nav a:hover {
 
 
 /* ============================================================
-   09 · BONUS
+   09 Â· BONUS
    ============================================================ */
 
 .bonus {
@@ -557,7 +557,7 @@ nav a:hover {
 
 
 /* ============================================================
-   10 · GALLERY
+   10 Â· GALLERY
    ============================================================ */
 
 .gallery {
@@ -612,7 +612,7 @@ nav a:hover {
 
 
 /* ============================================================
-   11 · STAY
+   11 Â· STAY
    ============================================================ */
 
 .stay {
@@ -635,7 +635,7 @@ nav a:hover {
 
 
 /* ============================================================
-   12 · FOOTER
+   12 Â· FOOTER
    ============================================================ */
 
 footer {
@@ -661,7 +661,7 @@ footer div {
 
 
 /* ============================================================
-   13 · POMONA STORY
+   13 Â· POMONA STORY
    ============================================================ */
 
 .pomona-story {
@@ -771,7 +771,7 @@ footer div {
 
 
 /* ============================================================
-   14 · POMONA TODAY
+   14 Â· POMONA TODAY
    ============================================================ */
 
 .pomona-now {
@@ -884,7 +884,7 @@ footer div {
 
 
 /* ============================================================
-   15 · POMONA QUOTE
+   15 Â· POMONA QUOTE
    ============================================================ */
 
 .pomona-quote {
@@ -933,7 +933,7 @@ footer div {
 
 
 /* ============================================================
-   16 · LIFE IN POMONA
+   16 Â· LIFE IN POMONA
    ============================================================ */
 
 .pomona-life {
@@ -1080,7 +1080,7 @@ footer div {
 
 
 /* ============================================================
-   17 · TABLET
+   17 Â· TABLET
    ============================================================ */
 
 @media (max-width: 1000px) {
@@ -1157,7 +1157,7 @@ footer div {
 
 
 /* ============================================================
-   18 · MOBILE
+   18 Â· MOBILE
    ============================================================ */
 
 @media (max-width: 700px) {
@@ -1285,7 +1285,7 @@ footer div {
 
 
     /* --------------------------------------------------------
-       POMONA STORY · MOBILE
+       POMONA STORY Â· MOBILE
        -------------------------------------------------------- */
 
     .pomona-content {
@@ -1334,7 +1334,7 @@ footer div {
 
 
     /* --------------------------------------------------------
-       POMONA TODAY · MOBILE
+       POMONA TODAY Â· MOBILE
        -------------------------------------------------------- */
 
     .pomona-now {
@@ -1372,7 +1372,7 @@ footer div {
 
 
     /* --------------------------------------------------------
-       POMONA QUOTE · MOBILE
+       POMONA QUOTE Â· MOBILE
        -------------------------------------------------------- */
 
     .pomona-quote {
@@ -1389,7 +1389,7 @@ footer div {
 
 
     /* --------------------------------------------------------
-       LIFE IN POMONA · MOBILE
+       LIFE IN POMONA Â· MOBILE
        -------------------------------------------------------- */
 
     .pomona-life {
@@ -1442,7 +1442,7 @@ footer div {
 
 
 /* ============================================================
-   19 · VERY SMALL PHONES
+   19 Â· VERY SMALL PHONES
    ============================================================ */
 
 @media (max-width: 380px) {
@@ -1471,7 +1471,7 @@ footer div {
 
 
 /* =========================================================
-   LEE BLUE LOCAL GUIDE — EDITORIAL CARDS
+   LEE BLUE LOCAL GUIDE â€” EDITORIAL CARDS
    ========================================================= */
 
 .lee-pomona-experience {
@@ -1940,7 +1940,7 @@ a.lee-guide-card:hover .lee-guide-image img {
 }
 
 /* BEGIN MANAGED PREMIUM BOOKING CSS */
-LEE BLUE POMONA — PREMIUM BOUTIQUE BOOKING
+LEE BLUE POMONA â€” PREMIUM BOUTIQUE BOOKING
    Scoped to #booking-calculator only.
    ========================================================== */
 
@@ -2284,14 +2284,14 @@ LEE BLUE POMONA — PREMIUM BOUTIQUE BOOKING
 
 /* BEGIN LEE BLUE BOOKING FOCUS */
 
-/* Apartma — topla karibska peščena */
+/* Apartma â€” topla karibska peĹˇÄŤena */
 #booking-calculator .booking-luxe-story {
     background: linear-gradient(145deg, #F0DFC2 0%, #FBF4E8 100%);
     border: 1px solid #D8BD91;
     box-shadow: 0 14px 35px rgba(113, 83, 42, .10);
 }
 
-/* Visoka sezona — žajbelj in olivno zelena */
+/* Visoka sezona â€” Ĺľajbelj in olivno zelena */
 #booking-calculator .booking-luxe-rate-card {
     background: linear-gradient(145deg, #D5E3D1 0%, #EDF3E8 100%);
     border: 1px solid #B4C9AD;
@@ -2306,7 +2306,7 @@ LEE BLUE POMONA — PREMIUM BOUTIQUE BOOKING
     color: #294F3D;
 }
 
-/* Rezervacija — najizrazitejše okno */
+/* Rezervacija â€” najizrazitejĹˇe okno */
 #booking-calculator .booking-luxe-form-panel {
     position: relative;
     background: linear-gradient(150deg, #C7DFDA 0%, #E4F0EB 58%, #F2F3E7 100%);
@@ -2357,7 +2357,7 @@ LEE BLUE POMONA — PREMIUM BOUTIQUE BOOKING
     transform: translateY(-1px);
 }
 
-/* Rezultat izračuna — šampanjec in zlati rob */
+/* Rezultat izraÄŤuna â€” Ĺˇampanjec in zlati rob */
 #booking-calculator .booking-result {
     background: linear-gradient(140deg, #F4E6C8 0%, #FFFAEE 100%);
     border: 1px solid #D4B879;
@@ -2365,7 +2365,7 @@ LEE BLUE POMONA — PREMIUM BOUTIQUE BOOKING
     box-shadow: 0 12px 28px rgba(117, 91, 49, .10);
 }
 
-/* Prilagoditev za manjše zaslone */
+/* Prilagoditev za manjĹˇe zaslone */
 @media (max-width: 800px) {
     #booking-calculator .booking-luxe-form-panel {
         box-shadow: 0 15px 38px rgba(34, 76, 68, .14);
@@ -2374,7 +2374,7 @@ LEE BLUE POMONA — PREMIUM BOUTIQUE BOOKING
 
 /* END LEE BLUE BOOKING FOCUS */
 
-/* LEE BLUE — BOOKING SPACING REFINEMENT */
+/* LEE BLUE â€” BOOKING SPACING REFINEMENT */
 /* Spacious, balanced margins for desktop and mobile */
 #booking-calculator.booking-luxe {
     box-sizing: border-box;
@@ -2404,9 +2404,9 @@ LEE BLUE POMONA — PREMIUM BOUTIQUE BOOKING
         padding: 52px 18px;
     }
 }
-/* END LEE BLUE — BOOKING SPACING REFINEMENT */
+/* END LEE BLUE â€” BOOKING SPACING REFINEMENT */
 
-/* LEE BLUE — BOOKING SPACING REFINEMENT V2 */
+/* LEE BLUE â€” BOOKING SPACING REFINEMENT V2 */
 /* Restore generous section width and add balanced inner card spacing */
 #booking-calculator.booking-luxe {
     box-sizing: border-box;
@@ -2506,9 +2506,9 @@ LEE BLUE POMONA — PREMIUM BOUTIQUE BOOKING
         padding: 18px;
     }
 }
-/* END LEE BLUE — BOOKING SPACING REFINEMENT V2 */
+/* END LEE BLUE â€” BOOKING SPACING REFINEMENT V2 */
 
-/* LEE BLUE — INNER TEXT SPACING V3 */
+/* LEE BLUE â€” INNER TEXT SPACING V3 */
 /* Keep card dimensions; create consistent breathing room for all text */
 #booking-calculator.booking-luxe .booking-luxe-story,
 #booking-calculator.booking-luxe .booking-luxe-form-panel {
@@ -2557,5 +2557,6 @@ LEE BLUE POMONA — PREMIUM BOUTIQUE BOOKING
         padding-inline: 21px !important;
     }
 }
-/* END LEE BLUE — INNER TEXT SPACING V3 */
+/* END LEE BLUE â€” INNER TEXT SPACING V3 */
+
 
