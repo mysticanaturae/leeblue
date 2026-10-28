@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
 
 
 /* ============================================================
@@ -2373,4 +2373,189 @@ LEE BLUE POMONA — PREMIUM BOUTIQUE BOOKING
 }
 
 /* END LEE BLUE BOOKING FOCUS */
+
+/* LEE BLUE — BOOKING SPACING REFINEMENT */
+/* Spacious, balanced margins for desktop and mobile */
+#booking-calculator.booking-luxe {
+    box-sizing: border-box;
+    padding: clamp(72px, 8vw, 112px) clamp(24px, 6vw, 88px);
+}
+
+#booking-calculator .booking-luxe-inner {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+}
+
+#booking-calculator .booking-luxe-story,
+#booking-calculator .booking-luxe-form-panel {
+    min-width: 0;
+}
+
+@media (max-width: 800px) {
+    #booking-calculator.booking-luxe {
+        padding: 64px 24px;
+    }
+}
+
+@media (max-width: 420px) {
+    #booking-calculator.booking-luxe {
+        padding: 52px 18px;
+    }
+}
+/* END LEE BLUE — BOOKING SPACING REFINEMENT */
+
+/* LEE BLUE — BOOKING SPACING REFINEMENT V2 */
+/* Restore generous section width and add balanced inner card spacing */
+#booking-calculator.booking-luxe {
+    box-sizing: border-box;
+    width: 100%;
+    padding: clamp(64px, 7vw, 96px) clamp(28px, 5vw, 64px);
+}
+
+#booking-calculator .booking-luxe-inner {
+    width: 100%;
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+#booking-calculator .booking-luxe-layout {
+    width: 100%;
+    gap: clamp(28px, 4vw, 64px);
+}
+
+#booking-calculator .booking-luxe-story,
+#booking-calculator .booking-luxe-form-panel {
+    box-sizing: border-box;
+    min-width: 0;
+    padding-left: clamp(24px, 3vw, 40px);
+    padding-right: clamp(24px, 3vw, 40px);
+}
+
+#booking-calculator .booking-luxe-occupancy {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 18px 0;
+}
+
+#booking-calculator .booking-luxe-occupancy > span:last-child {
+    flex: 1 1 180px;
+    min-width: 0;
+}
+
+#booking-calculator .booking-luxe-occupancy strong,
+#booking-calculator .booking-luxe-occupancy small {
+    display: block;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+#booking-calculator .booking-luxe-rate-card {
+    padding: clamp(20px, 2.5vw, 30px);
+    box-sizing: border-box;
+}
+
+#booking-calculator .booking-luxe-rate-row {
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+#booking-calculator .booking-luxe-rate-row > div {
+    flex: 1 1 150px;
+    min-width: 0;
+}
+
+#booking-calculator .booking-luxe-rate-row > span {
+    flex: 0 1 auto;
+    white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+    #booking-calculator.booking-luxe {
+        padding: 56px 24px;
+    }
+
+    #booking-calculator .booking-luxe-story,
+    #booking-calculator .booking-luxe-form-panel {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    #booking-calculator .booking-luxe-layout {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 420px) {
+    #booking-calculator.booking-luxe {
+        padding: 44px 16px;
+    }
+
+    #booking-calculator .booking-luxe-story,
+    #booking-calculator .booking-luxe-form-panel {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #booking-calculator .booking-luxe-rate-card {
+        padding: 18px;
+    }
+}
+/* END LEE BLUE — BOOKING SPACING REFINEMENT V2 */
+
+/* LEE BLUE — INNER TEXT SPACING V3 */
+/* Keep card dimensions; create consistent breathing room for all text */
+#booking-calculator.booking-luxe .booking-luxe-story,
+#booking-calculator.booking-luxe .booking-luxe-form-panel {
+    padding-inline: clamp(28px, 3.2vw, 44px) !important;
+}
+
+#booking-calculator.booking-luxe .booking-luxe-story > p,
+#booking-calculator.booking-luxe .booking-luxe-story > h3,
+#booking-calculator.booking-luxe .booking-luxe-form-panel > p,
+#booking-calculator.booking-luxe .booking-luxe-form-panel > h3 {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#booking-calculator.booking-luxe .booking-luxe-occupancy {
+    gap: 16px;
+    align-items: flex-start;
+}
+
+#booking-calculator.booking-luxe .booking-luxe-occupancy > span:last-child {
+    min-width: 0;
+    flex: 1 1 180px;
+}
+
+#booking-calculator.booking-luxe .booking-luxe-occupancy small {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.65;
+}
+
+#booking-calculator.booking-luxe .booking-luxe-rate-card {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+    #booking-calculator.booking-luxe .booking-luxe-story,
+    #booking-calculator.booking-luxe .booking-luxe-form-panel {
+        padding-inline: 26px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    #booking-calculator.booking-luxe .booking-luxe-story,
+    #booking-calculator.booking-luxe .booking-luxe-form-panel {
+        padding-inline: 21px !important;
+    }
+}
+/* END LEE BLUE — INNER TEXT SPACING V3 */
 
