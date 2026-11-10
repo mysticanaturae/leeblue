@@ -2640,7 +2640,7 @@ figure.lee-pomona-sign-banner > img {
 .retreat-image-caption{position:absolute;right:0;bottom:0;padding:14px 20px;background:#d7e5db;color:#234a42;font-size:.65rem;letter-spacing:.16em;font-weight:700}
 .retreat-divider{display:flex;align-items:center;gap:22px;margin:76px 0 30px;color:#98794a;font-size:.68rem;font-weight:700;letter-spacing:.19em}
 .retreat-divider:before,.retreat-divider:after{content:"";height:1px;flex:1;background:rgba(24,59,61,.2)}
-.retreat-offer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.retreat-offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
 .retreat-offer{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(24,59,61,.12);box-shadow:0 15px 45px rgba(24,59,61,.07);min-width:0}
 .retreat-offer>img{display:block;width:100%;height:245px;object-fit:cover}
 .retreat-offer-body{display:flex;flex:1;flex-direction:column;padding:28px}
