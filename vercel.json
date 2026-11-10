@@ -6,7 +6,6 @@
       "has": [
         {
           "type": "host",
-          "key": "host",
           "value": "lee-blue.bz"
         }
       ],
@@ -18,7 +17,6 @@
       "has": [
         {
           "type": "host",
-          "key": "host",
           "value": "www.lee-blue.bz"
         }
       ],
@@ -30,7 +28,6 @@
       "has": [
         {
           "type": "host",
-          "key": "host",
           "value": "www.lee-blue.com"
         }
       ],
