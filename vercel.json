@@ -1,0 +1,38 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "lee-blue.bz"
+        }
+      ],
+      "destination": "https://lee-blue.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.lee-blue.bz"
+        }
+      ],
+      "destination": "https://lee-blue.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.lee-blue.com"
+        }
+      ],
+      "destination": "https://lee-blue.com/:path*",
+      "permanent": true
+    }
+  ]
+}
