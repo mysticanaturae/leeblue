@@ -97,6 +97,15 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
             result.textContent = t.min;
             return;
         }
+        if (nightCount >= 30) {
+            result.hidden = false;
+            result.textContent = lang === "sl"
+                ? "Za bivanje 30 noči ali več nam pošljite povpraševanje za individualno ponudbo."
+                : lang === "es"
+                    ? "Para estancias de 30 noches o más, contáctanos para recibir una cotización personalizada."
+                    : "For stays of 30 nights or more, please contact us for a tailored quote.";
+            return;
+        }
 
         const tier = nightCount >= 21 ? 3 : nightCount >= 14 ? 2 : nightCount >= 7 ? 1 : 0;
         const highRates = [170, 160, 150, 140];
