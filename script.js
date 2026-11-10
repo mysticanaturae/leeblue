@@ -1,4 +1,4 @@
-﻿document.querySelectorAll('a[href^="#"]').forEach(link => {
+document.querySelectorAll('a[href^="#"]').forEach(link => {
 
     link.addEventListener("click", function(event) {
 
@@ -74,7 +74,9 @@
 
         if (!start || !end || end <= start) {
             result.hidden = false;
-            result.textContent = "Please choose a valid check-in and check-out date. Check-out must be after check-in.";
+            const lang = document.documentElement.lang || "en";
+            const invalid = { en: "Please choose valid check-in and check-out dates. Check-out must be after check-in.", sl: "Izberite veljavna datuma prihoda in odhoda. Odhod mora biti po prihodu.", es: "Elige fechas válidas de entrada y salida. La salida debe ser posterior a la entrada." };
+            result.textContent = invalid[lang] || invalid.en;
             return;
         }
 
@@ -96,18 +98,27 @@
         }
 
         result.hidden = false;
+        const lang = document.documentElement.lang || "en";
+        const copy = {
+            en: { title: "Your estimated stay", night: "night", nights: "nights", guest: "guest", guests: "guests", high: "High-season nights", low: "Low-season nights", total: "Estimated accommodation total", note: "This is a price estimate only. It does not check availability or reserve these dates. Please contact Lee Blue to confirm your stay." },
+            sl: { title: "Okvirna cena bivanja", night: "noč", nights: "noči", guest: "gost", guests2: "gosta", guestsOther: "gostje", high: "Nočitve v visoki sezoni", low: "Nočitve v nizki sezoni", total: "Okvirna skupna cena nastanitve", note: "To je informativni izračun cene. Ne preverja razpoložljivosti in ne ustvari rezervacije. Za potrditev bivanja kontaktirajte Lee Blue." },
+            es: { title: "Estimación de tu estancia", night: "noche", nights: "noches", guest: "huésped", guests: "huéspedes", high: "Noches de temporada alta", low: "Noches de temporada baja", total: "Precio estimado del alojamiento", note: "Este es solo un cálculo del precio. No comprueba la disponibilidad ni reserva las fechas. Contacta con Lee Blue para confirmar tu estancia." }
+        };
+        const t = copy[lang] || copy.en;
+        const guestLabel = lang === "sl" ? (guestCount === 1 ? t.guest : (guestCount === 2 ? t.guests2 : t.guestsOther)) : (guestCount === 1 ? t.guest : t.guests);
+        const dateLocale = lang === "sl" ? "sl-SI" : (lang === "es" ? "es" : "en-US");
         result.innerHTML = `
-            <h3>Your estimated stay</h3>
-            <p>${start.toLocaleDateString("en-US", {timeZone:"UTC", year:"numeric", month:"long", day:"numeric"})}
-            – ${end.toLocaleDateString("en-US", {timeZone:"UTC", year:"numeric", month:"long", day:"numeric"})}</p>
-            <p>${nightCount} night${nightCount === 1 ? "" : "s"} · ${guestCount} guest${guestCount === 1 ? "" : "s"}</p>
+            <h3>${t.title}</h3>
+            <p>${start.toLocaleDateString(dateLocale, {timeZone:"UTC", year:"numeric", month:"long", day:"numeric"})}
+            – ${end.toLocaleDateString(dateLocale, {timeZone:"UTC", year:"numeric", month:"long", day:"numeric"})}</p>
+            <p>${nightCount} ${nightCount === 1 ? t.night : t.nights} · ${guestCount} ${guestLabel}</p>
             <ul>
-                <li>High-season nights: ${highNights} × $300 = ${money(highNights * 300)}</li>
-                <li>Low-season nights: ${lowNights} × $220 = ${money(lowNights * 220)}</li>
+                <li>${t.high}: ${highNights} × $300 = ${money(highNights * 300)}</li>
+                <li>${t.low}: ${lowNights} × $220 = ${money(lowNights * 220)}</li>
             </ul>
-            <strong>Estimated accommodation total</strong>
+            <strong>${t.total}</strong>
             <span class="booking-total">${money(total)}</span>
-            <p>This is a price estimate only. It does not check availability or reserve these dates. Please contact Lee Blue Pomona to confirm your stay.</p>
+            <p>${t.note}</p>
         `;
     });
 })();
